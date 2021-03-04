@@ -3,7 +3,8 @@
     <string name="mainActivityTextView">Select a homework</string>
     <string name="homeworkOneButton">Homework 1</string>
     <string name="todoTextView">To do</string>
-    <string name="editTextSearchTodos">Search for TODOs</string>
+    <string name="editTextFilterTodos">Filter TODOs</string>
     <string name="newTodoButton">Add</string>
     <string name="deleteTodoEntriesButton">Delete all entires</string>
+    <string name="todoEntryDeleteButton">Delete</string>
 </resources>

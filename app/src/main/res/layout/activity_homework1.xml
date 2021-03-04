@@ -7,10 +7,10 @@
     tools:context=".Homework1">
 
     <EditText
-        android:id="@+id/editTextSearchTodos"
+        android:id="@+id/editTextFilterTodos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/editTextSearchTodos"
+        android:hint="@string/editTextFilterTodos"
         android:inputType="textShortMessage" />
 
     <LinearLayout
@@ -52,26 +52,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:id="@+id/todoEntry0"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="196dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="TextView" />
-
-                <Button
-                    android:id="@+id/button2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Button" />
-            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 
