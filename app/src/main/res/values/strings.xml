@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">PMP Homeworks</string>
+    <string name="mainActivityTextView">Select a homework</string>
+</resources>
