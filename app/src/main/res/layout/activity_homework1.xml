@@ -4,7 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Homework1">
+    tools:context=".Homework1"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
 
     <EditText
         android:id="@+id/editTextFilterTodos"
@@ -20,10 +22,9 @@
 
         <EditText
             android:id="@+id/newTodoEditText"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
+            android:layout_width="196dp"
+            android:layout_weight="3"
             android:inputType="textShortMessage" />
 
         <Button
