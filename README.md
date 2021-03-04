@@ -7,3 +7,5 @@ This repository contains the homework projects for the course Programming for mo
 Each homework will have its own activity that will be accessible with a buttons placed in home screen.
 
 # Homework list
+
+* ![Homework 1](/documentation/homework1.md)
