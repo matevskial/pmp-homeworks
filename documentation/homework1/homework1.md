@@ -15,3 +15,5 @@ The scrollView is used to display TODOS along with a button to delete an entry.
 The bottom button is used to delete all TODO entries.
 
 # Screenshots
+
+![Screenshot 1](mainActivity.jpg "Main activity")

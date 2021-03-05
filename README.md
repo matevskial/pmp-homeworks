@@ -8,4 +8,4 @@ Each homework will have its own activity that will be accessible with a buttons 
 
 # Homework list
 
-* ![Homework 1](/documentation/homework1.md)
+* ![Homework 1](/documentation/homework1/homework1.md)
