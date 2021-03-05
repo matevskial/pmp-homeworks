@@ -20,7 +20,7 @@ class Homework1 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_homework1)
-        title = "Homework 1"
+        title = "Homework 1 - TODO app"
 
         newTodoEditText = findViewById(R.id.newTodoEditText)
         newTodoButton = findViewById(R.id.newTodoButton)
