@@ -16,4 +16,4 @@ The bottom button is used to delete all TODO entries.
 
 # Screenshots
 
-![Screenshot 1](mainActivity.jpg "Main activity")
+<img src="mainActivity.jpg" width="50%" height="50%" title="Main activity">
