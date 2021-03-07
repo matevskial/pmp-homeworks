@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Homework1"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
+
+    <EditText
+        android:id="@+id/editTextFilterTodos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/editTextFilterTodos"
+        android:inputType="textShortMessage" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/newTodoEditText"
+            android:layout_height="wrap_content"
+            android:layout_width="196dp"
+            android:layout_weight="3"
+            android:inputType="textShortMessage" />
+
+        <Button
+            android:id="@+id/newTodoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/newTodoButton" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/todoTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/todoTextView"
+        android:textAlignment="center" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E3CDF8">
+
+        <LinearLayout
+            android:id="@+id/todoContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/deleteTodoEntriesButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/deleteTodoEntriesButton" />
+    </LinearLayout>
+
+</LinearLayout>
