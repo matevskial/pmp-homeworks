@@ -17,6 +17,9 @@ class Homework1 : AppCompatActivity() {
     private lateinit var deleteTodoEntriesButton: Button
     private lateinit var editTextFilterTodos: EditText
 
+    private lateinit var storage: StorageTodo
+    private lateinit var todoList: MutableList<String>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_homework1)
@@ -29,15 +32,18 @@ class Homework1 : AppCompatActivity() {
         editTextFilterTodos = findViewById(R.id.editTextFilterTodos)
 
         newTodoButton.setOnClickListener {
-            val todoEntry = createTodoEntry()
-            todoContainer.addView(todoEntry)
+            createTodoEntry(newTodoEditText.text.toString())
+            todoList.add(newTodoEditText.text.toString())
+            storage.update(todoList)
             newTodoEditText.text.clear()
 
             Toast.makeText(this, "Added new TODO entry", Toast.LENGTH_SHORT).show()
         }
 
         deleteTodoEntriesButton.setOnClickListener {
+            todoList.clear()
             todoContainer.removeAllViews()
+            storage.update(todoList)
         }
 
         editTextFilterTodos.addTextChangedListener(object : TextWatcher {
@@ -52,20 +58,25 @@ class Homework1 : AppCompatActivity() {
             }
 
         })
+
+        storage = StorageTodo(this)
+        loadTodoFromStorage()
     }
 
-    private fun createTodoEntry() : LinearLayout {
+    private fun createTodoEntry(todoText: String) {
         val newTodoEntry = LayoutInflater.from(this).inflate(R.layout.todo_entry, null) as LinearLayout
 
         val todoTextView = newTodoEntry.getChildAt(0) as TextView
-        todoTextView.text = newTodoEditText.text
+        todoTextView.text = todoText
 
         val todoDeleteButton = newTodoEntry.getChildAt(1)
         todoDeleteButton.setOnClickListener {
+            todoList.remove(todoText)
             todoContainer.removeView(newTodoEntry)
+            storage.update(todoList)
         }
 
-        return newTodoEntry
+        todoContainer.addView(newTodoEntry)
     }
 
     private fun filterTodoEntries(text: String) {
@@ -77,6 +88,13 @@ class Homework1 : AppCompatActivity() {
             } else {
                 todoEntry.visibility = View.GONE
             }
+        }
+    }
+
+    private fun loadTodoFromStorage() {
+        todoList = storage.load()
+        for(todo in todoList) {
+            createTodoEntry(todo)
         }
     }
 }
