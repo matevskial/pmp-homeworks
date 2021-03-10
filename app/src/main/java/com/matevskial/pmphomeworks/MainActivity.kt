@@ -19,7 +19,9 @@ class MainActivity : AppCompatActivity() {
     private fun setHomeworkButtonsClickHandlers() {
         for((index, c) in homeworkButtons.children.withIndex()) {
             c.setOnClickListener {
-                val intent = Intent(this, Class.forName("com.matevskial.pmphomeworks.Homework" + (index + 1)))
+                val packageName = this.packageName + ".homework" + (index + 1)
+                val className = ".Homework" + (index + 1)
+                val intent = Intent(this, Class.forName(packageName + className))
                 startActivity(intent)
             }
         }

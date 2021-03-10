@@ -1,4 +1,4 @@
-package com.matevskial.pmphomeworks
+package com.matevskial.pmphomeworks.homework1
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.*
 import androidx.core.view.children
+import com.matevskial.pmphomeworks.R
 
 class Homework1 : AppCompatActivity() {
 
@@ -64,7 +65,7 @@ class Homework1 : AppCompatActivity() {
     }
 
     private fun createTodoEntry(todoText: String) {
-        val newTodoEntry = LayoutInflater.from(this).inflate(R.layout.todo_entry, null) as LinearLayout
+        val newTodoEntry = LayoutInflater.from(this).inflate(R.layout.todo_entry, todoContainer, false) as LinearLayout
 
         val todoTextView = newTodoEntry.getChildAt(0) as TextView
         todoTextView.text = todoText
