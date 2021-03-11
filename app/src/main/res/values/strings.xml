@@ -7,4 +7,5 @@
     <string name="newTodoButton">Add</string>
     <string name="deleteTodoEntriesButton">Delete all entires</string>
     <string name="todoEntryDeleteButton">Delete</string>
+    <string name="homeworkTwoButton">Homework 2</string>
 </resources>
