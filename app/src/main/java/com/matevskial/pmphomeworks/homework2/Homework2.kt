@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.*
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.os.bundleOf
 import androidx.core.view.children
 import com.matevskial.pmphomeworks.R
@@ -19,6 +18,8 @@ class Homework2 : AppCompatActivity() {
     private lateinit var searchDictionaryButton: Button
 
     private lateinit var currentEditedDictionaryEntryView: View
+
+    private lateinit var storage: StorageDictionary
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,6 +39,21 @@ class Homework2 : AppCompatActivity() {
         searchDictionaryButton.setOnClickListener {
             filterDictionaryEntries()
         }
+
+        storage = StorageDictionary(this)
+        loadDictionaryEntries()
+    }
+
+    private fun loadDictionaryEntries() {
+        val dictionaryEntries = storage.load()
+        dictionaryEntriesLinearLayout.removeAllViews()
+        for(e in dictionaryEntries) {
+            val macedonianWord = e.split("\t")[0]
+            val englishWord = e.split("\t")[1]
+
+            addToView(macedonianWord, englishWord)
+        }
+        filterDictionaryEntries()
     }
 
     private fun filterDictionaryEntries() {
@@ -56,6 +72,13 @@ class Homework2 : AppCompatActivity() {
     }
 
     fun addToDictionary(macedonianWord: String, englishWord: String) {
+        addToView(macedonianWord, englishWord)
+        val entry = macedonianWord + "\t" + englishWord
+        storage.add(entry)
+        loadDictionaryEntries()
+    }
+
+    private fun addToView(macedonianWord: String, englishWord: String) {
         val newDictionaryEntry = LayoutInflater.from(this).inflate(R.layout.fragment_dictionary_entry, dictionaryEntriesLinearLayout, false)
 
         val macedonianWordTextView = newDictionaryEntry.findViewById<TextView>(R.id.macedonianWordTextView)
@@ -80,6 +103,9 @@ class Homework2 : AppCompatActivity() {
 
         deleteEntryButton.setOnClickListener {
             dictionaryEntriesLinearLayout.removeView(newDictionaryEntry)
+            val entry = macedonianWordTextView.text as String + "\t" + englishWordTextView.text
+            storage.delete(entry)
+            loadDictionaryEntries()
         }
 
         dictionaryEntriesLinearLayout.addView(newDictionaryEntry)
@@ -89,7 +115,13 @@ class Homework2 : AppCompatActivity() {
         val macedonianWordTextView = currentEditedDictionaryEntryView.findViewById<TextView>(R.id.macedonianWordTextView)
         val englishWordTextView = currentEditedDictionaryEntryView.findViewById<TextView>(R.id.englishWordTextView)
 
+        val oldEntry = macedonianWordTextView.text as String + "\t" + englishWordTextView.text
+        val newEntry = macedonianWord + "\t" + englishWord
+
         macedonianWordTextView.text = macedonianWord
         englishWordTextView.text = englishWord
+
+        storage.update(oldEntry, newEntry)
+        loadDictionaryEntries()
     }
 }
