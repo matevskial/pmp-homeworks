@@ -15,4 +15,6 @@
     <string name="englishLabelTextViewText">English</string>
     <string name="openEditEntryDialogButtonText">Edit</string>
     <string name="deleteEntryButtonText">Delete</string>
+    <string name="macedonianWordEditTextHint">Македонски</string>
+    <string name="englishWordEditTextHint">English</string>
 </resources>
