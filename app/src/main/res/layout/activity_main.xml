@@ -28,6 +28,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/homeworkOneButton" />
+            <Button
+                android:id="@+id/homeworkTwoButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/homeworkTwoButton" />
         </LinearLayout>
     </ScrollView>
 

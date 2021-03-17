@@ -7,4 +7,14 @@
     <string name="newTodoButton">Add</string>
     <string name="deleteTodoEntriesButton">Delete all entires</string>
     <string name="todoEntryDeleteButton">Delete</string>
+    <string name="homeworkTwoButton">Homework 2</string>
+    <string name="searchDictionaryEditTextHint">Search in dictionary</string>
+    <string name="searchDictionaryButtonText">Search</string>
+    <string name="addToDictionaryButtonText">Add new entry</string>
+    <string name="macedonianLabelTextViewText">Македонски</string>
+    <string name="englishLabelTextViewText">English</string>
+    <string name="openEditEntryDialogButtonText">Edit</string>
+    <string name="deleteEntryButtonText">Delete</string>
+    <string name="macedonianWordEditTextHint">Македонски</string>
+    <string name="englishWordEditTextHint">English</string>
 </resources>
