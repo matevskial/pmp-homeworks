@@ -12,7 +12,7 @@ import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import com.matevskial.pmphomeworks.R
 
-class AddToDictionaryDialogFragment : DialogFragment() {
+class AddToDictionaryDialogFragment() : DialogFragment() {
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return activity?.let {
@@ -27,7 +27,6 @@ class AddToDictionaryDialogFragment : DialogFragment() {
             val bundle = arguments
 
             val isEdit = bundle?.getBoolean("isEdit")
-
             if(isEdit == true) {
                 macedonianWordEditText.setText(bundle.getString("macedonianWord"), TextView.BufferType.EDITABLE)
                 englishWordEditText.setText(bundle.getString("englishWord"), TextView.BufferType.EDITABLE)
@@ -40,12 +39,13 @@ class AddToDictionaryDialogFragment : DialogFragment() {
                 .setPositiveButton("Save") { dialog, id ->
                     val macedonianWord = macedonianWordEditText.text.toString()
                     val englishWord = englishWordEditText.text.toString()
-                    if (isEdit == true) {
-                        (it as Homework2).editDictionaryEntry(macedonianWord, englishWord)
+                    val entry = macedonianWord + "\t" + englishWord
+                    if(isEdit == true) {
+                        val position = bundle.getInt("position")
+                        (activity as Homework2).updateDictionary(position, entry)
                     } else {
-                        (it as Homework2).addToDictionary(macedonianWord, englishWord)
+                        (activity as Homework2).addToDictionary(entry)
                     }
-
                 }
                 .setNegativeButton("Cancel") { dialog, id ->
                     dialog.cancel()
