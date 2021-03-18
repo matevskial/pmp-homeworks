@@ -12,7 +12,7 @@ import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import com.matevskial.pmphomeworks.R
 
-class AddToDictionaryDialogFragment() : DialogFragment() {
+class AddOrEditDictionaryEntryDialogFragment() : DialogFragment() {
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return activity?.let {

@@ -2,11 +2,7 @@ package com.matevskial.pmphomeworks.homework2
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
 import android.widget.*
-import androidx.core.os.bundleOf
-import androidx.core.view.children
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.matevskial.pmphomeworks.R
@@ -32,7 +28,7 @@ class Homework2 : AppCompatActivity() {
         dictionaryEntriesRecycleView = findViewById(R.id.dictionaryEntriesRecycleView)
 
         addToDictionaryButton.setOnClickListener {
-            AddToDictionaryDialogFragment().show(supportFragmentManager, null)
+            AddOrEditDictionaryEntryDialogFragment().show(supportFragmentManager, null)
         }
 
         searchDictionaryButton.setOnClickListener {

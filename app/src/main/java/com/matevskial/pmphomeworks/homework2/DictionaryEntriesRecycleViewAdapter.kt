@@ -1,6 +1,5 @@
 package com.matevskial.pmphomeworks.homework2
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -54,7 +53,7 @@ class DictionaryEntriesRecycleViewAdapter(private val context: Homework2)
             val bundle = bundleOf("isEdit" to true, "position" to position,
                 "macedonianWord" to parts[0],
                 "englishWord" to parts[1])
-            val dialog = AddToDictionaryDialogFragment()
+            val dialog = AddOrEditDictionaryEntryDialogFragment()
             dialog.arguments = bundle
             dialog.show(context.supportFragmentManager, null)
         }
